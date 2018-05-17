@@ -1,0 +1,7 @@
+#set("title") {#get(title)}
+
+#set("h1") {Home}
+#set("body") {#get(body)}
+
+
+#embed("master")

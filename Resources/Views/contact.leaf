@@ -1,0 +1,8 @@
+#set("title") { #get(title) }
+
+#set("h1") { Contact }
+#set("body") { <a href=mailto:#get(body)>#get(body)</a></li> }
+
+
+
+#embed("master")
