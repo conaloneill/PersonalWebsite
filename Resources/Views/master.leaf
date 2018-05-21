@@ -51,6 +51,7 @@
 
     <footer class="container">
       <p>Copyright &copy; 2018 Conal O'Neill</p>
+	  <p style="text-align: center;"><img src="/monopoly.png" style="width: 116px;" /></p>
     </footer>
 
     <!-- Bootstrap core JavaScript
