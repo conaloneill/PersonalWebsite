@@ -6,6 +6,8 @@ import Leaf
 ///
 /// [Learn More →](https://docs.vapor.codes/3.0/getting-started/structure/#routesswift)
 
+
+// MARK: Structs
 struct MainView: Codable {
 	var title: String?
 	var body: String?
@@ -17,6 +19,8 @@ struct ProjectView: Codable {
 	var allProjects: [String]
 }
 
+
+// MARK: Global variables
 let projects = [
 	"monopoly": "Desktop app Monopoly game built in Java",
 	"monopolyBot": "Desktop app Monopoly game bot built in Java",
@@ -25,6 +29,8 @@ let projects = [
 ]
 
 
+
+//MARK: Routes
 public func routes(_ router: Router) throws {
     router.get("/") { req -> Future<View> in
 		
@@ -39,7 +45,7 @@ public func routes(_ router: Router) throws {
 		let context: ProjectView
 		
 		if let project = projects[projectName] {
-			context = ProjectView(name: projectName, description: project, photo: projectName, allProjects: projects.keys.sorted())
+			context = ProjectView(name: projectName, description: project, photo: String(describing: projectName), allProjects: projects.keys.sorted())
 		} else {
 			context = ProjectView(name: nil, description: nil, photo: nil, allProjects: projects.keys.sorted())
 		}
