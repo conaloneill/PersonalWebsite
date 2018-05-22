@@ -1,0 +1,15 @@
+#set("title") { Submit }
+
+#if(error) {
+	#set("h1") { Error! }
+	#set("body") { #get(error) }
+} else {
+	#set("h1") { Success! }
+	#set("body") {
+		<p>Name: #get(name)</p>
+		<p>Email: #get(email)</p>
+		<p>Message: #get(message)</p>
+	}
+}
+
+#embed("master")

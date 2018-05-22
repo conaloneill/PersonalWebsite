@@ -65,5 +65,24 @@ public func routes(_ router: Router) throws {
 		return try req.view().render("contact", context)
 	}
 	
+	router.post("submit") { req -> Future<View> in
+		struct ContactForm: Codable {
+			var name: String?
+			var email: String?
+			var message: String?
+			var error: String?
+		}
+
+		return try req.content.decode(ContactForm.self).flatMap(to: View.self) { form in
+			print(form.name ?? "No name given")
+			print(form.email ?? "No email given")
+			print(form.message ?? "No message given")
+			guard form.name != nil else {
+				return try req.view().render("submit", ContactForm(name: nil, email: nil, message: nil, error: "Failed submit, please try again!"))
+			}
+			return try req.view().render("submit", ContactForm(name: form.name, email: form.email, message: form.message, error: nil))
+		}
+	}
+	
 	
 }

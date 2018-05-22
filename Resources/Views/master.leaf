@@ -48,6 +48,13 @@
         #get(body)
       </div>
     </main>
+	
+	<main role="form">
+		<div class="container">
+			<p>#get(formHeading)</p>
+			#get(contactForm)
+		</div>
+	</main>
 
     <footer class="container">
       <p>Copyright &copy; 2018 Conal O'Neill</p>
