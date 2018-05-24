@@ -1,6 +1,7 @@
 import Routing
 import Vapor
 import Leaf
+import SendGrid
 
 /// Register your application's routes here.
 ///
@@ -17,6 +18,13 @@ struct ProjectView: Codable {
 	var description: String?
 	var photo: String?
 	var allProjects: [String]
+}
+
+struct ContactForm: Codable {
+	var name: String?
+	var email: String?
+	var message: String?
+	var error: String?
 }
 
 
@@ -66,13 +74,6 @@ public func routes(_ router: Router) throws {
 	}
 	
 	router.post("submit") { req -> Future<View> in
-		struct ContactForm: Codable {
-			var name: String?
-			var email: String?
-			var message: String?
-			var error: String?
-		}
-
 		return try req.content.decode(ContactForm.self).flatMap(to: View.self) { form in
 			print(form.name ?? "No name given")
 			print(form.email ?? "No email given")
@@ -84,5 +85,27 @@ public func routes(_ router: Router) throws {
 		}
 	}
 	
+	
+	router.get("email") { req -> Future<View> in
+		
+		do {
+			let emailAddressTo = EmailAddress(email: "conaloneillcs@gmail.com", name: "Conal to")
+			let emailAddressFrom = EmailAddress(email: "conaloneillcs@gmail.com", name: "Conal from")
+
+			let content = [["testcontent": "testing"]]
+			let personalization = Personalization(to: [emailAddressTo])
+			let email = SendGridEmail(personalizations: [personalization], from: emailAddressFrom, replyTo: emailAddressTo, subject: "Test subject", content: content)
+			
+			let sendGridClient = try req.make(SendGridClient.self)
+			
+			_ = try sendGridClient.send([email], on: req.eventLoop)
+
+			return try req.view().render("submit", ContactForm(name: String(describing: emailAddressFrom.name!), email: String(describing: emailAddressFrom.email!), message: String(describing: content.first?.keys.first!), error: nil))
+		}
+		catch let error as SendGridError {
+			return try req.view().render("submit", ContactForm(name: nil, email: nil, message: nil, error: String(describing: error)))
+		}
+
+	}
 	
 }
