@@ -2,11 +2,11 @@ import Routing
 import Vapor
 import Leaf
 import SendGrid
+import MailCore
 
 /// Register your application's routes here.
 ///
 /// [Learn More →](https://docs.vapor.codes/3.0/getting-started/structure/#routesswift)
-
 
 // MARK: Structs
 struct MainView: Codable {
@@ -35,7 +35,6 @@ let projects = [
 	"panopoly": "variation on Monopoly running on AWS with android and desktop app components",
 	"website": "Personal website built on Vapor 3.0.2, written in Swift and hosted on Heroku"
 ]
-
 
 
 //MARK: Routes
@@ -81,31 +80,15 @@ public func routes(_ router: Router) throws {
 			guard form.name != nil else {
 				return try req.view().render("submit", ContactForm(name: nil, email: nil, message: nil, error: "Failed submit, please try again!"))
 			}
-			return try req.view().render("submit", ContactForm(name: form.name, email: form.email, message: form.message, error: nil))
+			
+			let mail = Mailer.Message(from: String(describing: form.email!), to: "conaloneillcs@gmail.com", subject: "Email from Personal Website", text: String(describing: form.message!), html: "<p>\(String(describing: form.message!))</p>")
+			
+			print(mail)
+			return try req.mail.send(mail).flatMap(to: View.self) { mailResult in
+				print(mailResult)
+				// ... Return your response for example
+				return try req.view().render("submit", ContactForm(name: form.name, email: form.email, message: form.message, error: nil))
+			}
 		}
 	}
-	
-	
-	router.get("email") { req -> Future<View> in
-		
-		do {
-			let emailAddressTo = EmailAddress(email: "conaloneillcs@gmail.com", name: "Conal to")
-			let emailAddressFrom = EmailAddress(email: "conaloneillcs@gmail.com", name: "Conal from")
-
-			let content = [["testcontent": "testing"]]
-			let personalization = Personalization(to: [emailAddressTo])
-			let email = SendGridEmail(personalizations: [personalization], from: emailAddressFrom, replyTo: emailAddressTo, subject: "Test subject", content: content)
-			
-			let sendGridClient = try req.make(SendGridClient.self)
-			
-			_ = try sendGridClient.send([email], on: req.eventLoop)
-
-			return try req.view().render("submit", ContactForm(name: String(describing: emailAddressFrom.name!), email: String(describing: emailAddressFrom.email!), message: String(describing: content.first?.keys.first!), error: nil))
-		}
-		catch let error as SendGridError {
-			return try req.view().render("submit", ContactForm(name: nil, email: nil, message: nil, error: String(describing: error)))
-		}
-
-	}
-	
 }
