@@ -7,11 +7,10 @@ let package = Package(
         // 💧 A server-side Swift web framework.
         .package(url: "https://github.com/vapor/vapor.git", from: "3.0.0"),
 		.package(url: "http://github.com/vapor/leaf.git", from: "3.0.0-rc"),
-		.package(url: "https://github.com/vapor-community/sendgrid-provider.git", from: "3.0.0"),
-		.package(url: "https://github.com/LiveUI/MailCore.git", .branch("master"))
+		.package(url: "https://github.com/conaloneill/MailCore.git", .branch("master"))
     ],
     targets: [
-        .target(name: "App", dependencies: ["Vapor", "Leaf", "SendGrid", "MailCore"]),
+        .target(name: "App", dependencies: ["Vapor", "Leaf", "MailCore"]),
         .target(name: "Run", dependencies: ["App"]),
         .testTarget(name: "AppTests", dependencies: ["App"]),
     ]

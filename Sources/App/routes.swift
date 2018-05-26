@@ -1,7 +1,6 @@
 import Routing
 import Vapor
 import Leaf
-import SendGrid
 import MailCore
 
 /// Register your application's routes here.
@@ -83,6 +82,7 @@ public func routes(_ router: Router) throws {
 			
 			let mail = Mailer.Message(from: String(describing: form.email!), to: "conaloneillcs@gmail.com", subject: "Email from Personal Website", text: String(describing: form.message!), html: "<p>\(String(describing: form.message!))</p>")
 			
+			print(mail.from)
 			print(mail)
 			return try req.mail.send(mail).flatMap(to: View.self) { mailResult in
 				print(mailResult)
