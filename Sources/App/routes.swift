@@ -29,20 +29,26 @@ struct ContactForm: Codable {
 
 // MARK: Global variables
 let projects = [
-	"monopoly": "Desktop app Monopoly game built in Java",
-	"monopolyBot": "Desktop app Monopoly game bot built in Java",
-	"panopoly": "variation on Monopoly running on AWS with android and desktop app components",
-	"website": "Personal website built on Vapor 3.0.2, written in Swift and hosted on Heroku"
+	"monopoly": "Desktop app Monopoly game built in Java.",
+	"monopolyBot": "Desktop app Monopoly game bot built in Java.",
+	"panopoly": "Variation on Monopoly running on AWS with android and desktop app components.",
+	"website": "My personal website is built on Vapor 3.0.2, written in Swift and hosted on Heroku."
 ]
 
 
 //MARK: Routes
 public func routes(_ router: Router) throws {
+	
     router.get("/") { req -> Future<View> in
-		
-		let context = MainView(title: "Welcome to my personal website!", body: "This website is running on Vapor 3.0.2 and hosted on Heroku.")
+		let context = MainView(title: "Welcome to my personal website!", body: projects["website"])
         return try req.view().render("home", context)
     }
+	
+	
+	router.get("cv") { req -> Future<View> in
+		let context = MainView(title: "CV", body: "Education")
+		return try req.view().render("cv", context)
+	}
 	
 	
 	router.get("project", String.parameter) { req -> Future<View> in

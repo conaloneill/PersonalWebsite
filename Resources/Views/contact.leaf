@@ -1,7 +1,10 @@
 #set("title") { #get(title) }
 
 #set("h1") { Contact }
-#set("body") { Email me at: <a href=mailto:#get(body)>#get(body)</a></li> }
+#set("body") {
+<p>Check out my GitHub: <a href=https://www.github.com/conaloneill>conaloneill</a></p>
+	<p>Email me at: <a href=mailto:#get(body)>#get(body)</a></p>
+}
 
 #set("formHeading") { or using the form below. }
 #set("contactForm") {
