@@ -97,4 +97,13 @@ public func routes(_ router: Router) throws {
 			}
 		}
 	}
+	struct User: Content {
+		var name: String
+		var email: String
+	}
+	
+	
+	router.get("json") { req -> User in
+		return User(name: "Vapor User", email: "user@vapor.com")
+	}
 }
