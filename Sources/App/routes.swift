@@ -32,7 +32,7 @@ let projects = [
 	"monopoly": "Desktop app Monopoly game built in Java.",
 	"monopolyBot": "Desktop app Monopoly game bot built in Java.",
 	"panopoly": "Variation on Monopoly running on AWS with android and desktop app components.",
-	"website": "My personal website is built on Vapor 3.0.2, written in Swift and hosted on Heroku."
+	"website": "My personal website is built on Vapor 3, written in Swift and hosted on Heroku."
 ]
 
 

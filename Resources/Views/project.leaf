@@ -2,7 +2,7 @@
 	<p>Choose a project to view</p>
 	<ul>
 		#for(project in allProjects) {
-			<li><a href="/project/#(project)">#capitalize(project)</a></li>
+		<li><a href="/project/#(project)">#capitalize(project)</a></li>
 		}
 	</ul>
 }
