@@ -66,7 +66,7 @@ public func routes(_ router: Router) throws {
 	}
 	
 	router.get("project") { req -> Future<View> in
-		let context = ProjectView(name: nil, description: nil, photo: nil, allProjects: projects.keys.sorted())
+		let context = ProjectView(name: projects.keys.first, description: projects.values.first, photo: String(describing: projects.keys.first), allProjects: projects.keys.sorted())
 		return try req.view().render("project", context)
 	}
 	
