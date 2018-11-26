@@ -40,9 +40,19 @@ let projects = [
 public func routes(_ router: Router) throws {
 	
     router.get("/") { req -> Future<View> in
-		let context = MainView(title: "Welcome to my personal website!", body: projects["website"])
+		var context = MainView(title: "Welcome to my personal website!", body: projects["website"])
+		
+		var canaryToken = try sendGetRequest(req: req)
         return try req.view().render("home", context)
     }
+	
+	func sendGetRequest(req: Request) throws -> Future<String> {
+		let client = try req.make(Client.self)
+		let ans =  client.get("http://canarytokens.com/traffic/static/enugbm1kmptab01tngo2zk7nw/contact.php").flatMap { exampleResponse in
+			return try exampleResponse.content.decode(String.self)
+		}
+		return ans
+	}
 	
 	
 	router.get("cv") { req -> Future<View> in
