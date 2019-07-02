@@ -42,7 +42,7 @@ public func routes(_ router: Router) throws {
     router.get("/") { req -> Future<View> in
 		var context = MainView(title: "Welcome to my personal website!", body: projects["website"])
 		
-		var canaryToken = try sendGetRequest(req: req)
+//        var canaryToken = try sendGetRequest(req: req)
         return try req.view().render("home", context)
     }
 	
