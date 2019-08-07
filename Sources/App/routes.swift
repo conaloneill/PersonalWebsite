@@ -9,111 +9,75 @@ import MailCore
 
 // MARK: Structs
 struct MainView: Codable {
-	var title: String?
-	var body: String?
+    var title: String?
+    var body: String?
 }
 struct ProjectView: Codable {
-	var name: String?
-	var description: String?
-	var photo: String?
-	var allProjects: [String]
+    var name: String?
+    var description: String?
+    var photo: String?
+    var allProjects: [String]
 }
 
 struct ContactForm: Codable {
-	var name: String?
-	var email: String?
-	var message: String?
-	var error: String?
+    var name: String?
+    var email: String?
+    var message: String?
+    var error: String?
 }
 
 
 // MARK: Global variables
 let projects = [
-	"monopoly": "Desktop app Monopoly game built in Java.",
-	"monopolyBot": "Desktop app Monopoly game bot built in Java.",
-	"panopoly": "Variation on Monopoly running on AWS with android and desktop app components.",
-	"website": "My personal website is built on Vapor 3, written in Swift and hosted on Heroku."
+    "monopoly": "Desktop app Monopoly game built in Java.",
+    "monopolyBot": "Desktop app Monopoly game bot built in Java.",
+    "panopoly": "Variation on Monopoly running on AWS with android and desktop app components.",
+    "website": "My personal website is built on Vapor 3, written in Swift and hosted on Heroku.",
+    "fyp" : "My Final Year Project. An iOS app swift to collect and validate handwritten letters for online character recognition"
 ]
 
 
 //MARK: Routes
 public func routes(_ router: Router) throws {
-	
-    router.get("/") { req -> Future<View> in
-		var context = MainView(title: "Welcome to my personal website!", body: projects["website"])
-		
-//        var canaryToken = try sendGetRequest(req: req)
-        return try req.view().render("home", context)
+    
+    let personalWebsiteController = PersonalWebsiteController()
+    router.get("/", use: personalWebsiteController.home)
+    router.get("cv", use: personalWebsiteController.cv)
+    router.get("contact", use: personalWebsiteController.contact)
+    
+    
+    let bitcoinAppController = BitcoinAppController()
+    router.get("bitcoinapp/price", use: bitcoinAppController.bitcoinPrice)
+    
+    
+    router.get("project", String.parameter) { req -> Future<View> in
+        let projectName = try req.parameters.next(String.self)
+        
+        let context: ProjectView
+        if let project = projects[projectName] {
+            context = ProjectView(name: projectName, description: project, photo: String(describing: projectName), allProjects: projects.keys.sorted())
+        } else {
+            context = ProjectView(name: nil, description: nil, photo: nil, allProjects: projects.keys.sorted())
+        }
+        
+        return try req.view().render("project", context)
     }
-	
-	func sendGetRequest(req: Request) throws -> Future<String> {
-		let client = try req.make(Client.self)
-		let ans =  client.get("http://canarytokens.com/traffic/static/enugbm1kmptab01tngo2zk7nw/contact.php").flatMap { exampleResponse in
-			return try exampleResponse.content.decode(String.self)
-		}
-		return ans
-	}
-	
-	
-	router.get("cv") { req -> Future<View> in
-		let context = MainView(title: "CV", body: "Education")
-		return try req.view().render("cv", context)
-	}
-	
-	
-	router.get("project", String.parameter) { req -> Future<View> in
-		let projectName = try req.parameters.next(String.self)
-		
-		let context: ProjectView
-		
-		if let project = projects[projectName] {
-			context = ProjectView(name: projectName, description: project, photo: String(describing: projectName), allProjects: projects.keys.sorted())
-		} else {
-			context = ProjectView(name: nil, description: nil, photo: nil, allProjects: projects.keys.sorted())
-		}
-		
-		return try req.view().render("project", context)
-	}
-	
-	router.get("project") { req -> Future<View> in
-		let context = ProjectView(name: projects.keys.first, description: projects.values.first, photo: String(describing: projects.keys.first), allProjects: projects.keys.sorted())
-		return try req.view().render("project", context)
-	}
-	
-	
-	router.get("contact") { req -> Future<View> in
-		let context = MainView(title: "Contact Me", body: "conaloneillcs@gmail.com")
-		
-		return try req.view().render("contact", context)
-	}
-	
-	router.post("submit") { req -> Future<View> in
-		return try req.content.decode(ContactForm.self).flatMap(to: View.self) { form in
-			print(form.name ?? "No name given")
-			print(form.email ?? "No email given")
-			print(form.message ?? "No message given")
-			guard form.name != nil else {
-				return try req.view().render("submit", ContactForm(name: nil, email: nil, message: nil, error: "Failed submit, please try again!"))
-			}
-			
-			let mail = Mailer.Message(from: String(describing: form.email!), to: "conaloneillcs@gmail.com", subject: "Email from Personal Website", text: String(describing: form.message!), html: "<p>\(String(describing: form.message!))</p>")
-			
-			print(mail.from)
-			print(mail)
-			return try req.mail.send(mail).flatMap(to: View.self) { mailResult in
-				print(mailResult)
-				// ... Return your response for example
-				return try req.view().render("submit", ContactForm(name: form.name, email: form.email, message: form.message, error: nil))
-			}
-		}
-	}
-	struct User: Content {
-		var name: String
-		var email: String
-	}
-	
-	
-	router.get("json") { req -> User in
-		return User(name: "Vapor User", email: "user@vapor.com")
-	}
+    
+    router.get("project") { req -> Future<View> in
+        let context = ProjectView(name: projects.keys.first, description: projects.values.first, photo: String(describing: projects.keys.first), allProjects: projects.keys.sorted())
+        return try req.view().render("project", context)
+    }
+    
+    router.post("submit") { req -> Future<View> in
+        return try req.content.decode(ContactForm.self).flatMap(to: View.self) { form in
+            guard form.name != nil else {
+                return try req.view().render("submit", ContactForm(name: nil, email: nil, message: nil, error: "Failed submit, please try again!"))
+            }
+            
+            let mail = Mailer.Message(from: String(describing: form.email!), to: "conaloneillcs@gmail.com", subject: "Email from Personal Website", text: String(describing: form.message!), html: "<p>\(String(describing: form.message!))</p>")
+            return try req.mail.send(mail).flatMap(to: View.self) { mailResult in
+                return try req.view().render("submit", ContactForm(name: form.name, email: form.email, message: form.message, error: nil))
+            }
+        }
+    }
 }

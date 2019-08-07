@@ -7,14 +7,17 @@
 	</ul>
 }
 
+
+
 #if(name) {
 	#set("title") { #capitalize(name) }
 	#set("h1") { #capitalize(name) }
-	#set("body") {
-		<p>#(description)</p>
-		<p><img src="/#get(photo).png" style="width: 320px;"/></p>
-		#get(projectList)
-	}
+    #set("body") {
+        <p>#(description)</p>
+        <p><img src="/#get(photo).png" style="width: 320px;"/></p>
+        #get(projectList)
+    }
+
 } else {
 	#set("title") { Project }
 	#set("h1") { Unknown project name }
@@ -23,5 +26,4 @@
 		#get(projectList)
 	}
 }
-
 #embed("master")
