@@ -1,8 +1,89 @@
 #set("title") {#get(title)}
 
-#set("h1") { CV }
 #set("body") {
-	#get(body)
+	<head>
+	  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	  <title>Online Responsive Resume Demo</title>
+	  <meta name="author" content="Conal O'Neill">
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	  <meta name="HandheldFriendly" content="true">
+	  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	  <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+	  <link rel="stylesheet" type="text/css" href="/styles/responsive.css">
+	  <!--[if lt IE 9]>
+	    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	  <![endif]-->
+	</head>
+
+	<body>
+		<div id="w" itemscope itemtype="http://schema.org/Person">
+			<header class="clearfix">
+				<div id="info">
+					<h1><span itemprop="name">Conal O'Neill</span></h1>
+					<h4><span itemprop="jobTitle">iOS Developer</span></h3>
+					<small itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+					  <span itemprop="addressLocality">Terenure</span>,
+					  <span itemprop="addressRegion">Dublin</span>,
+					  <span itemprop="addressCountry">Ireland</span>
+					</small>
+                    <small><a href="http://github.com/conaloneill" itemprop="url">My GitHub</a> &bull; <a href="mailto:conaloneillcs@gmail.com" itemprop="url">conaloneillcs@gmail.com</a></small>
+				</div>
+
+				<div id="photo">
+					<img src="images/conal.jpg" alt="Conal O'Neill resume photo avatar" itemprop="image" />
+				</div>
+			</header>
+
+			<section id="profile">
+				<h2>My History &amp; Profile</h2>
+				<p itemprop="description">I'm a 24 year old iOS developer from Dublin, Ireland.
+			</section>
+
+			<section id="skills" class="clearfix" itemscope itemtype="http://schema.org/ItemList">
+				<h2 itemprop="name">Skillset</h2>
+				<section id="skills-left">
+					<h4 itemprop="about">Development</h4>
+					<ul>
+                        <li itemprop="itemListElement">Swift</li>
+						<li itemprop="itemListElement">Java</li>
+						<li itemprop="itemListElement">Vapor Backend</li>
+						<li itemprop="itemListElement">SQL Databases</li>
+						<li itemprop="itemListElement">Python</li>
+						<li itemprop="itemListElement">Git</li>
+					</ul>
+				</section>
+
+				<section id="skills-right">
+					<h4 itemprop="about">Software</h4>
+					<ul>
+						<li itemprop="itemListElement">Xcode</li>
+						<li itemprop="itemListElement">Intellij</li>
+						<li itemprop="itemListElement">Atom</li>
+					</ul>
+				</section>
+			</section>
+
+			<section id="education">
+				<h2>Education</h2>
+				<p><span itemprop="alumniOf">Bsc (Hons) Computer Science, University College Dublin (UCD)</span> 2019.</p>
+			</section>
+
+			<section id="experience">
+				<h2>Work Experience</h2>
+				<p>Customer Service Advisor for Apple and PTSB</p>
+				<p>Sales Agent for Sky Ireland</p>
+			</section>
+
+            <section id="interests">
+                <h2>Interests &amp; Achievements</h2>
+                <p>Formula 1</p>
+                <p>Golf</p>
+                <p>PADI Open Water Diver</p>
+            </section>
+
+		</div>
+	</body>
 }
 
 
