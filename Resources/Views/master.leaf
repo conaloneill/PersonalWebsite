@@ -34,7 +34,7 @@
 				<a class="nav-link" href="/cv">CV</a>
 			</li>
             <li class="nav-item">
-              <a class="nav-link" href="/project/monopoly">Projects</a>
+              <a class="nav-link" href="/project/fyp">Projects</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/contact">Contact</a>
@@ -52,14 +52,15 @@
     </main>
 	
 	<main role="form">
-		<div class="container">
+		<div class="container" style="margin-bottom:50px;">
 			<p>#get(formHeading)</p>
 			#get(contactForm)
+            
 		</div>
 	</main>
 
     <footer class="container">
-        <div class="navbar navbar fixed-bottom">
+        <div class="navbar navbar fixed-bottom" >
             <small>Copyright &copy; 2019 Conal O'Neill</small>
         </div>
     </footer>
