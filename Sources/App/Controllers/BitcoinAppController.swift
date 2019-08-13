@@ -28,4 +28,27 @@ final class BitcoinAppController {
         }
         return bitcoinPrice
     }
+    
+    func bitcoinCurrencies(_ req: Request) throws -> Future<Currencies> {
+        let client = try req.make(Client.self)
+        let response = client.get("https://blockchain.info/ticker")
+        
+        let currencies = response.flatMap { data in
+            return try data.content.decode([String: BitcoinConvertedDetail].self)
+        }
+        return currencies
+    }
+    
+    
+    typealias Currencies = [String: BitcoinConvertedDetail]
+    
+    struct BitcoinConvertedDetail: Content {
+        let the15M, last, buy, sell: Double
+        let symbol: String
+        
+        enum CodingKeys: String, CodingKey {
+            case the15M = "15m"
+            case last, buy, sell, symbol
+        }
+    }
 }

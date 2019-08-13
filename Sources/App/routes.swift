@@ -34,5 +34,5 @@ public func routes(_ router: Router) throws {
     
     let bitcoinAppController = BitcoinAppController()
     router.get("bitcoinapp/price", use: bitcoinAppController.bitcoinPrice)
-    
+    router.get("bitcoinapp/currencies", use: bitcoinAppController.bitcoinCurrencies)
 }
