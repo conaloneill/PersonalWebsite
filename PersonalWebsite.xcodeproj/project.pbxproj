@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		7D8BAE2D232148C900EA0A14 /* configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8BAE2C232148C900EA0A14 /* configure.swift */; };
 		OBJ_1002 /* Async+NIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_529 /* Async+NIO.swift */; };
 		OBJ_1003 /* AsyncError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_530 /* AsyncError.swift */; };
 		OBJ_1004 /* Collection+Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_531 /* Collection+Future.swift */; };
@@ -1015,7 +1016,6 @@
 		OBJ_778 /* StreamableFileMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* StreamableFileMiddleware.swift */; };
 		OBJ_779 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* Structs.swift */; };
 		OBJ_780 /* boot.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* boot.swift */; };
-		OBJ_781 /* configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* configure.swift */; };
 		OBJ_782 /* routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* routes.swift */; };
 		OBJ_784 /* MailCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "MailCore::MailCore::Product" /* MailCore.framework */; };
 		OBJ_785 /* SendGrid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SendGrid::SendGrid::Product" /* SendGrid.framework */; };
@@ -4877,9 +4877,17 @@
 			remoteGlobalIDString = "swift-nio::CNIOLinux";
 			remoteInfo = CNIOLinux;
 		};
+		7D8BAE2B23212DB400EA0A14 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "PersonalWebsite::AppTests";
+			remoteInfo = AppTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7D8BAE2C232148C900EA0A14 /* configure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = configure.swift; sourceTree = "<group>"; };
 		"Console::Command::Product" /* Command.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Command.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Console::Console::Product" /* Console.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Console.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Console::Logging::Product" /* Logging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Logging.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -4953,7 +4961,6 @@
 		OBJ_155 /* WebSocketServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketServer.swift; sourceTree = "<group>"; };
 		OBJ_156 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/ConalONeill/Documents/Developer/GitHub/PersonalWebsite/.build/checkouts/vapor.git-5492988889259800272/Package.swift"; sourceTree = "<group>"; };
 		OBJ_159 /* Exports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exports.swift; sourceTree = "<group>"; };
-		OBJ_16 /* configure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = configure.swift; sourceTree = "<group>"; };
 		OBJ_160 /* WebSocket+Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebSocket+Client.swift"; sourceTree = "<group>"; };
 		OBJ_161 /* WebSocket+Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebSocket+Server.swift"; sourceTree = "<group>"; };
 		OBJ_162 /* WebSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
@@ -8275,8 +8282,8 @@
 				OBJ_12 /* Helpers.swift */,
 				OBJ_13 /* StreamableFileMiddleware.swift */,
 				OBJ_14 /* Structs.swift */,
+				7D8BAE2C232148C900EA0A14 /* configure.swift */,
 				OBJ_15 /* boot.swift */,
-				OBJ_16 /* configure.swift */,
 				OBJ_17 /* routes.swift */,
 			);
 			name = App;
@@ -10944,9 +10951,9 @@
 				OBJ_776 /* PersonalWebsiteController.swift in Sources */,
 				OBJ_777 /* Helpers.swift in Sources */,
 				OBJ_778 /* StreamableFileMiddleware.swift in Sources */,
+				7D8BAE2D232148C900EA0A14 /* configure.swift in Sources */,
 				OBJ_779 /* Structs.swift in Sources */,
 				OBJ_780 /* boot.swift in Sources */,
-				OBJ_781 /* configure.swift in Sources */,
 				OBJ_782 /* routes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -12150,7 +12157,7 @@
 		OBJ_2014 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "PersonalWebsite::AppTests" /* AppTests */;
-			targetProxy = "PersonalWebsite::AppTests" /* AppTests */;
+			targetProxy = 7D8BAE2B23212DB400EA0A14 /* PBXContainerItemProxy */;
 		};
 		OBJ_2033 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
