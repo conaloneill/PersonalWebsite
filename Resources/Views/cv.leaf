@@ -22,12 +22,12 @@
 				<div id="info">
 					<h1><span itemprop="name">Conal O'Neill</span></h1>
 					<h4><span itemprop="jobTitle">iOS Developer</span></h3>
-					<small itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+					<p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 					  <span itemprop="addressLocality">Terenure</span>,
 					  <span itemprop="addressRegion">Dublin</span>,
 					  <span itemprop="addressCountry">Ireland</span>
-					</small>
-                    <small><a href="http://github.com/conaloneill" itemprop="url">My GitHub</a> &bull; <a href="mailto:conaloneillcs@gmail.com" itemprop="url">conaloneillcs@gmail.com</a></small>
+					</p>
+                    <p><a href="http://github.com/conaloneill" itemprop="url">My GitHub</a> &bull; <a href="mailto:conaloneillcs@gmail.com" itemprop="url">conaloneillcs@gmail.com</a></p>
 				</div>
 
 				<div id="photo">
@@ -39,20 +39,30 @@
 				<h2>My History &amp; Profile</h2>
 				<p itemprop="description">I'm a 24 year old iOS developer from Dublin, Ireland.
 			</section>
-
+            <div></div>
 			<section id="skills" class="clearfix" itemscope itemtype="http://schema.org/ItemList">
 				<h2 itemprop="name">Skillset</h2>
 				<section id="skills-left">
-					<h4 itemprop="about">Development</h4>
+					<h4 itemprop="about">Languages</h4>
 					<ul>
                         <li itemprop="itemListElement">Swift</li>
 						<li itemprop="itemListElement">Java</li>
-						<li itemprop="itemListElement">Vapor Backend</li>
-						<li itemprop="itemListElement">SQL Databases</li>
-						<li itemprop="itemListElement">Python</li>
 						<li itemprop="itemListElement">Git</li>
+                        <li itemprop="itemListElement">Python</li>
+                        <li itemprop="itemListElement">Ruby</li>
+                        <li itemprop="itemListElement">SQL</li>
 					</ul>
 				</section>
+                
+                <section id="skills-middle">
+                    <h4 itemprop="about">Frameworks</h4>
+                    <ul>
+                        <li itemprop="itemListElement">Cocoa Touch</li>
+                        <li itemprop="itemListElement">Vapor (Server-Side Swift)</li>
+                        <li itemprop="itemListElement">Cartage</li>
+                        <li itemprop="itemListElement">CoreData</li>
+                    </ul>
+                </section>
 
 				<section id="skills-right">
 					<h4 itemprop="about">Software</h4>

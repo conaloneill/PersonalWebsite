@@ -8,18 +8,6 @@ import MailCore
 /// [Learn More →](https://docs.vapor.codes/3.0/getting-started/structure/#routesswift)
 
 
-
-
-// MARK: Global variables
-let projects = [
-    "monopoly": "Desktop app Monopoly game built in Java.",
-    "monopolyBot": "Desktop app Monopoly game bot built in Java.",
-    "panopoly": "Variation on Monopoly running on AWS with android and desktop app components.",
-    "website": "My personal website is built on Vapor 3, written in Swift and hosted on Heroku.",
-    "fyp" : "My Final Year Project. An iOS app swift to collect and validate handwritten letters for online character recognition"
-]
-
-
 //MARK: Routes
 public func routes(_ router: Router) throws {
     

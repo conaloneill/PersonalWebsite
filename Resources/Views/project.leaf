@@ -14,7 +14,7 @@
     #set("h1") { #capitalize(name) }
     #set("body") {
         <p>#(description)</p>
-        <p><img src="/images/#get(photo).png" style="width: 320px;"/></p>
+        <p><img src="/images/#get(photo).png" style="width: 800px;"/></p>
         #get(projectList)
     }
 } else {

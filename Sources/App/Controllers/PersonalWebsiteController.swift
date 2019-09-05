@@ -9,6 +9,21 @@ import Foundation
 import Vapor
 import MailCore
 
+
+
+// MARK: Global variables
+let projects = [
+    "monopoly": "Monopoly game that is locally played on a single desktop using typed commands to play. Built in Java.",
+    "monopolyBot": "Game bot that plays a game of Monopoly. Built in Java.",
+    "panopoly": "Variation on Monopoly using randomly generated board spaces and characters. Server component runs on AWS with a Desktop component used to display the board. Android app is used as the game controller. All writting in Java with some Kotlin in the Android app.",
+    "website": "My personal website is built on Vapor 3, written in Swift 5 and hosted on Heroku.",
+    "botBoard": "Java Message Board application using Netflix's Eureka for service discovery of integrated AirQuality and Bitcoin bots, with Swagger for API documentation",
+    "fyp" : "My Final Year Project. An iOS app writtin in Swift. The app was used to collect and validate handwritten letters and words. The data collected was stored using CoreData and can be exported for use in online text recognition machine learning research. Below image shows a screengrab of the validation section of the app where the input is spilt by strokes"
+]
+
+
+
+
 final class PersonalWebsiteController {
     
     func home(_ req: Request) throws -> Future<View> {

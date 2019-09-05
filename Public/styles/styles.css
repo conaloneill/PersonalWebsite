@@ -17,6 +17,8 @@ padding: 5px;
 }
 
 /** @group skills **/
-#skills-left { display: block; float: left; margin-right: 30px; }
+#skills-left { display: block; float: left; margin-right: 55px; }
+#skills-middle { display: block; float: left; margin-right: 35px; }
 #skills-right { display: block; float: left;}
+
 
