@@ -82,5 +82,7 @@ xcuserdata
 *.xcodeproj
 DerivedData/
 .DS_Store
+.swift-version
+Package.resolved
 
 # End of https://www.gitignore.io/api/vapor
