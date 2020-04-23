@@ -1,12 +1,12 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>#get(title) – Personal Website</title>
+    <title>#import("title") – Personal Website</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -46,22 +46,22 @@
 
     <main role="main">
       <div class="container">
-        <h1>#get(h1)</h1>
-        #get(body)
+        <h1>#import("h1")</h1>
+        #import("body")
       </div>
     </main>
 	
 	<main role="form">
 		<div class="container" style="margin-bottom:50px;">
-			<p>#get(formHeading)</p>
-			#get(contactForm)
+			<p>#import("formHeading")</p>
+			#import("contactForm")
             
 		</div>
 	</main>
 
     <footer class="container">
         <div class="navbar navbar fixed-bottom" >
-            <small>Copyright &copy; 2019 Conal O'Neill</small>
+            <small>Copyright &copy; 2020 Conal O'Neill</small>
         </div>
     </footer>
 

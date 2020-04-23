@@ -1,7 +1,6 @@
-import Routing
 import Vapor
 import Leaf
-import MailCore
+
 
 /// Register your application's routes here.
 ///
@@ -9,18 +8,18 @@ import MailCore
 
 
 //MARK: Routes
-public func routes(_ router: Router) throws {
+public func routes(_ app: Application) throws {
     
     let personalWebsiteController = PersonalWebsiteController()
-    router.get("/", use: personalWebsiteController.home)
-    router.get("cv", use: personalWebsiteController.cv)
-    router.get("contact", use: personalWebsiteController.contact)
-    router.post("submit", use: personalWebsiteController.submit)
-    router.get("project", use: personalWebsiteController.projectHome)
-    router.get("project", String.parameter, use: personalWebsiteController.individualProject)
+    app.get("", use: personalWebsiteController.home)
+    app.get("cv", use: personalWebsiteController.cv)
+    app.get("contact", use: personalWebsiteController.contact)
+    app.post("submit", use: personalWebsiteController.submit)
+    app.get("project", use: personalWebsiteController.projectHome)
+    app.get("project", ":projectID", use: personalWebsiteController.individualProject)
     
     
     let bitcoinAppController = BitcoinAppController()
-    router.get("bitcoinapp/price", use: bitcoinAppController.bitcoinPrice)
-    router.get("bitcoinapp/currencies", use: bitcoinAppController.bitcoinCurrencies)
+    app.get("bitcoinapp", "price", use: bitcoinAppController.bitcoinPrice)
+    app.get("bitcoinapp" , "currencies", use: bitcoinAppController.bitcoinCurrencies)
 }

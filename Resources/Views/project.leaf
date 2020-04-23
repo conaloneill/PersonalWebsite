@@ -1,30 +1,28 @@
-#set("projectList") {
-    <p>Choose a project to view</p>
-    <ul>
-        #for(project in allProjects) {
-            <li><a href="/project/#(project)">#capitalize(project)</a></li>
-        }
-    </ul>
-}
+#extend("master"):
+    #export("title"):
+        #(name)
+    #endexport
+
+    #export("h1"):
+        #(name)
+    #endexport
 
 
-
-#if(name) {
-    #set("title") { #capitalize(name) }
-    #set("h1") { #capitalize(name) }
-    #set("body") {
+    #export("body"):
         <p>#(description)</p>
-        <p><img src="/images/#get(photo).png" style="width: 800px;"/></p>
-        #get(projectList)
-    }
-} else {
-    #set("title") { Project }
-    #set("h1") { Unknown project name }
-    #set("body") {
-        <p>We didnt recognise that project.</p>
-        #get(projectList)
-    }
-}
+        <p><img src="images/#(photo).png" style="width: 350px;"/></p>
+    #endexport
+
+#export("formHeading"):
+    <p>Choose a project to view</p>
+    <ul> #for(project in allProjects):
+        <li><a href="#(project.key)">#(project.name)</a></li>
+        #endfor
+    </ul>
+#endexport
+
+#export("contactForm"):
+#endexport
 
 
-#embed("master")
+#endextend

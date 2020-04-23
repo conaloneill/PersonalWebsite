@@ -1,6 +1,15 @@
-#set("title") {#get(title)}
 
-#set("body") {
+
+#extend("master"):
+#export("title"):
+#(title)
+#endexport
+
+#export("h1"):
+CV
+#endexport
+
+#export("body"):
 	<head>
 	  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	  <title>Online Responsive Resume Demo</title>
@@ -31,7 +40,7 @@
 				</div>
 
 				<div id="photo">
-					<img src="images/conal.jpg" alt="Conal O'Neill resume photo avatar" itemprop="image" />
+					<img src="images/conal.png" alt="Conal O'Neill resume photo avatar" itemprop="image" />
 				</div>
 			</header>
 
@@ -94,7 +103,11 @@
 
 		</div>
 	</body>
-}
+#endexport
 
+#export("formHeading"):
+#endexport
 
-#embed("master")
+#export("contactForm"):
+#endexport
+#endextend

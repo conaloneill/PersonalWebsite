@@ -16,7 +16,7 @@ struct ProjectView: Codable {
     var name: String?
     var description: String?
     var photo: String?
-    var allProjects: [String]
+    var allProjects: [Project]
 }
 
 struct ContactForm: Codable {
@@ -24,4 +24,10 @@ struct ContactForm: Codable {
     var email: String?
     var message: String?
     var error: String?
+}
+
+struct Project: Codable {
+    var key: String
+    var name: String
+    var description: String
 }

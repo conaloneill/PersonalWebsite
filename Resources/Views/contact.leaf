@@ -1,13 +1,23 @@
-#set("title") { #get(title) }
+#extend("master"):
 
-#set("h1") { Contact }
-#set("body") {
-<p>Check out my GitHub: <a href=https://www.github.com/conaloneill>conaloneill</a></p>
-	<p>Email me at: <a href=mailto:#get(body)>#get(body)</a></p>
-}
+#export("title"):
+    #(title)
+#endexport
 
-#set("formHeading") { or using the form below. }
-#set("contactForm") {
+#export("h1"):
+    Contact
+#endexport
+
+#export("body"):
+    <p>Check out my GitHub: <a      href=https://www.github.com/conaloneill>conaloneill</a></p>
+        <p>Email me at: <a href=mailto:#get(body)>#(body)</a></p>
+#endexport
+
+#export("formHeading"):
+    or using the form below.
+#endexport
+
+#export("contactForm"):
 	<form method="POST" action="/submit" enctype="multipart/form-data">
 		<p padding: 0 0 5em 0;>Name:</p>
 		<input type="text" name="name" placeholder="Name" required>
@@ -17,6 +27,6 @@
 		<p><textarea name="message" rows="10" cols="40" placeholder="Write your message here" required></textarea></p>
 		<input type="submit" name="submit">
 	</form>
-}
+#endexport
 
-#embed("master")
+#endextend

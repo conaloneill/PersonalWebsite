@@ -1,7 +1,17 @@
-#set("title") {#get(title)}
+#extend("master"):
+    #export("title"):
+        #(title)
+    #endexport
+    #export("h1"):
+        Home
+    #endexport
+    #export("body"):
+        #(body)
+    #endexport
 
-#set("h1") {Home}
-#set("body") {#get(body)}
+#export("formHeading"):
+#endexport
 
-
-#embed("master")
+#export("contactForm"):
+#endexport
+#endextend

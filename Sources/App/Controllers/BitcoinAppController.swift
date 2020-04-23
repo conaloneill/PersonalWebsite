@@ -15,28 +15,23 @@ final class BitcoinAppController {
         var price: String
     }
     
-    func bitcoinPrice(_ req: Request) throws -> Future<BitcoinPrice> {
-        
-        let client = try req.make(Client.self)
-        let response = client.get("https://blockchain.info/tobtc?currency=EUR&value=1")
-        let bitcoinPrice = response.flatMap(to: BitcoinPrice.self) { response in
-            let price  = response.http.body.consumeData(on: req).map(to: BitcoinPrice.self) { bitcoinData in
-                let string = String(data: bitcoinData, encoding: String.Encoding.utf8)
-                return BitcoinPrice(price: string ?? "Error")
+    func bitcoinPrice(_ req: Request) throws -> EventLoopFuture<BitcoinPrice> {
+
+        req.client.get("https://blockchain.info/tobtc?currency=EUR&value=1").flatMapThrowing { res in
+            if let price = res.body?.getString(at: res.body!.readerIndex, length: res.body!.readableBytes, encoding: String.Encoding.utf8) {
+                let bitcoinPrice = BitcoinPrice(price: price)
+                return bitcoinPrice
             }
-            return price
+            return BitcoinPrice(price: "Error!")
         }
-        return bitcoinPrice
     }
     
-    func bitcoinCurrencies(_ req: Request) throws -> Future<Currencies> {
-        let client = try req.make(Client.self)
-        let response = client.get("https://blockchain.info/ticker")
+    func bitcoinCurrencies(_ req: Request) throws -> EventLoopFuture<Currencies> {
         
-        let currencies = response.flatMap { data in
-            return try data.content.decode([String: BitcoinConvertedDetail].self)
+        req.client.get("https://blockchain.info/ticker").flatMapThrowing { res in
+            let currencies = try res.content.decode([String: BitcoinConvertedDetail].self)
+            return currencies
         }
-        return currencies
     }
     
     

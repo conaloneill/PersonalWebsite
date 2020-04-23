@@ -5,6 +5,7 @@
 ## Build generated
 build/
 DerivedData/
+PersonalWebsite.xcodeproj
 
 ## Various settings
 *.pbxuser
@@ -36,9 +37,10 @@ playground.xcworkspace
 # Swift Package Manager
 #
 # Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
-# Packages/
-# Package.pins
+Packages/
+Package.pins
 .build/
+.swiftpm/
 
 # CocoaPods
 #
@@ -80,5 +82,7 @@ xcuserdata
 *.xcodeproj
 DerivedData/
 .DS_Store
+.swift-version
+Package.resolved
 
 # End of https://www.gitignore.io/api/vapor
