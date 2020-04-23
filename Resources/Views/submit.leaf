@@ -1,15 +1,21 @@
-#set("title") { Submit }
+#extend("master"):
+    #export("title"):
+        Submit
+    #endexport
 
-#if(error) {
-	#set("h1") { Error! }
-	#set("body") { #get(error) }
-} else {
-	#set("h1") { Success! }
-	#set("body") {
-		<p>Name: #get(name)</p>
-		<p>Email: #get(email)</p>
-		<p>Message: #get(message)</p>
-	}
-}
+    #export("h1"):
+        Success!
+    #endexport
 
-#embed("master")
+    #export("body"):
+        <p>Name: #(name)</p>
+        <p>Email: #(email)</p>
+        <p>Message: #(message)</p>
+    #endexport
+
+    #export("formHeading"):
+    #endexport
+
+    #export("contactForm"):
+    #endexport
+#endextend
