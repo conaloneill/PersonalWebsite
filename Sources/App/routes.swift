@@ -10,19 +10,19 @@ import Leaf
 //MARK: Routes
 public func routes(_ app: Application) throws {
     
-    ///BLnH-v0FUbrEH8ZGqVzr1PyS7xHPxxCHSjXQSi2uFnQ.byjwGXWbeF1CLL1lSUZLXNVeqg5NOjgxSAC01Feiry8
+    ///AaKHkyiRUjmgx1__IzIxuU5QZM2BBg0_N5LzErAfjVo.byjwGXWbeF1CLL1lSUZLXNVeqg5NOjgxSAC01Feiry8
     ///And make it available on your web server at this URL:
-    ///http://www.conaloneill.dev/.well-known/acme-challenge/BLnH-v0FUbrEH8ZGqVzr1PyS7xHPxxCHSjXQSi2uFnQ
+    ///http://conaloneill.dev/.well-known/acme-challenge/AaKHkyiRUjmgx1__IzIxuU5QZM2BBg0_N5LzErAfjVo
     
-    app.get(".well-known","acme-challenge","BLnH-v0FUbrEH8ZGqVzr1PyS7xHPxxCHSjXQSi2uFnQ") { req in
-        return ("BLnH-v0FUbrEH8ZGqVzr1PyS7xHPxxCHSjXQSi2uFnQ.byjwGXWbeF1CLL1lSUZLXNVeqg5NOjgxSAC01Feiry8")
+    app.get(".well-known","acme-challenge","AaKHkyiRUjmgx1__IzIxuU5QZM2BBg0_N5LzErAfjVo") { req in
+        return ("AaKHkyiRUjmgx1__IzIxuU5QZM2BBg0_N5LzErAfjVo.byjwGXWbeF1CLL1lSUZLXNVeqg5NOjgxSAC01Feiry8")
     }
     
-    ///vAys5YpUZbtLbKj9UUV_29oHDujmaD4wqfo64JXyuWM.byjwGXWbeF1CLL1lSUZLXNVeqg5NOjgxSAC01Feiry8
+    ///HOetqLWctvNbnkfval4DiE0oqBqUlP8-HGnbkMkOQxg.byjwGXWbeF1CLL1lSUZLXNVeqg5NOjgxSAC01Feiry8
     ///And make it available on your web server at this URL:
-    ///http://conaloneill.dev/.well-known/acme-challenge/vAys5YpUZbtLbKj9UUV_29oHDujmaD4wqfo64JXyuWM
-    app.get(".well-known","acme-challenge","vAys5YpUZbtLbKj9UUV_29oHDujmaD4wqfo64JXyuWM") { req in
-        return ("vAys5YpUZbtLbKj9UUV_29oHDujmaD4wqfo64JXyuWM.byjwGXWbeF1CLL1lSUZLXNVeqg5NOjgxSAC01Feiry8")
+    ///http://www.conaloneill.dev/.well-known/acme-challenge/HOetqLWctvNbnkfval4DiE0oqBqUlP8-HGnbkMkOQxg
+    app.get(".well-known","acme-challenge","HOetqLWctvNbnkfval4DiE0oqBqUlP8-HGnbkMkOQxg") { req in
+        return ("HOetqLWctvNbnkfval4DiE0oqBqUlP8-HGnbkMkOQxg.byjwGXWbeF1CLL1lSUZLXNVeqg5NOjgxSAC01Feiry8")
     }
     
     
