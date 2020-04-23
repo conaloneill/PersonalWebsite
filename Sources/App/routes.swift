@@ -10,10 +10,6 @@ import Leaf
 //MARK: Routes
 public func routes(_ app: Application) throws {
     
-//    app.get { req in
-//        return "Hello World!"
-//    }
-    
     let personalWebsiteController = PersonalWebsiteController()
     app.get("", use: personalWebsiteController.home)
     app.get("cv", use: personalWebsiteController.cv)
@@ -23,7 +19,7 @@ public func routes(_ app: Application) throws {
     app.get("project", ":projectID", use: personalWebsiteController.individualProject)
     
     
-//    let bitcoinAppController = BitcoinAppController()
-//    app.get("bitcoinapp/price", use: bitcoinAppController.bitcoinPrice)
-//    app.get("bitcoinapp/currencies", use: bitcoinAppController.bitcoinCurrencies)
+    let bitcoinAppController = BitcoinAppController()
+    app.get("bitcoinapp", "price", use: bitcoinAppController.bitcoinPrice)
+    app.get("bitcoinapp" , "currencies", use: bitcoinAppController.bitcoinCurrencies)
 }
