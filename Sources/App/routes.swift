@@ -10,6 +10,22 @@ import Leaf
 //MARK: Routes
 public func routes(_ app: Application) throws {
     
+    ///BLnH-v0FUbrEH8ZGqVzr1PyS7xHPxxCHSjXQSi2uFnQ.byjwGXWbeF1CLL1lSUZLXNVeqg5NOjgxSAC01Feiry8
+    ///And make it available on your web server at this URL:
+    ///http://www.conaloneill.dev/.well-known/acme-challenge/BLnH-v0FUbrEH8ZGqVzr1PyS7xHPxxCHSjXQSi2uFnQ
+    
+    app.get(".well-known","acme-challenge","BLnH-v0FUbrEH8ZGqVzr1PyS7xHPxxCHSjXQSi2uFnQ") { req in
+        return ("BLnH-v0FUbrEH8ZGqVzr1PyS7xHPxxCHSjXQSi2uFnQ.byjwGXWbeF1CLL1lSUZLXNVeqg5NOjgxSAC01Feiry8")
+    }
+    
+    ///vAys5YpUZbtLbKj9UUV_29oHDujmaD4wqfo64JXyuWM.byjwGXWbeF1CLL1lSUZLXNVeqg5NOjgxSAC01Feiry8
+    ///And make it available on your web server at this URL:
+    ///http://conaloneill.dev/.well-known/acme-challenge/vAys5YpUZbtLbKj9UUV_29oHDujmaD4wqfo64JXyuWM
+    app.get(".well-known","acme-challenge","vAys5YpUZbtLbKj9UUV_29oHDujmaD4wqfo64JXyuWM") { req in
+        return ("vAys5YpUZbtLbKj9UUV_29oHDujmaD4wqfo64JXyuWM.byjwGXWbeF1CLL1lSUZLXNVeqg5NOjgxSAC01Feiry8")
+    }
+    
+    
     let personalWebsiteController = PersonalWebsiteController()
     app.get("", use: personalWebsiteController.home)
     app.get("cv", use: personalWebsiteController.cv)
