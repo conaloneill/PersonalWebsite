@@ -51,9 +51,11 @@ let projects = [
 final class PersonalWebsiteController {
     
     func home(_ req: Request) throws -> EventLoopFuture<View> {
-        let context = MainView(title: "Welcome to my personal website!", body: projects.filter{$0.key == "website"}.description)
+        
+        let context = MainView(title: "Welcome to my personal website!", body: projects.filter{$0.key == "website"}.first?.description)
+        
         if let url = Environment.get("CANARY_URL") {
-//            _ = try externalRequest(req: req, url: url)
+            req.client.get(URI(string: url))
         }
         return req.view.render("home", context)
     }
@@ -117,17 +119,3 @@ final class PersonalWebsiteController {
         return req.view.render("project", context)
     }
 }
-
-
-//
-//let context = ProjectView(
-//    name: projects.keys.first,
-//    description: projects.values.first?.description,
-//    photo: String(describing: projects.keys.first),
-//    key: projects.keys.sorted(),
-//    allProjects: Array(
-//        projects.values.map { project in
-//            return project.name
-//        }.sorted(by: {$0 < $1 })
-//    )
-//)
