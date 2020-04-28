@@ -25,14 +25,27 @@ public func routes(_ app: Application) throws {
         return ("HOetqLWctvNbnkfval4DiE0oqBqUlP8-HGnbkMkOQxg.byjwGXWbeF1CLL1lSUZLXNVeqg5NOjgxSAC01Feiry8")
     }
     
+    app.get("project") { req in
+        req.eventLoop.future(req.redirect(to: "projects"))
+    }
+    
+    app.get("project", ":projectID") { req -> EventLoopFuture<Response> in
+        guard let projectName = req.parameters.get("projectID") else {
+            return req.eventLoop.future(req.redirect(to: "projects"))
+        }
+        return req.eventLoop.future(req.redirect(to: "/projects/\(projectName)"))
+    }
+    
     
     let personalWebsiteController = PersonalWebsiteController()
     app.get("", use: personalWebsiteController.home)
     app.get("cv", use: personalWebsiteController.cv)
     app.get("contact", use: personalWebsiteController.contact)
     app.post("submit", use: personalWebsiteController.submit)
-    app.get("project", use: personalWebsiteController.projectHome)
-    app.get("project", ":projectID", use: personalWebsiteController.individualProject)
+    app.get("projects", use: personalWebsiteController.projectHome)
+    app.get("projects", ":projectID", use: personalWebsiteController.individualProject)
+    
+    
     
     
     let bitcoinAppController = BitcoinAppController()

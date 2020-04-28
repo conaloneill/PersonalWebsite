@@ -10,13 +10,13 @@
 
     #export("body"):
         <p>#(description)</p>
-        <p><img src="images/#(photo).png" style="width: 350px;"/></p>
+        <p><img src="/projects/images/#(photo).png" style="width: 350px;"/></p>
     #endexport
 
 #export("formHeading"):
     <p>Choose a project to view</p>
     <ul> #for(project in allProjects):
-        <li><a href="#(project.key)">#(project.name)</a></li>
+        <li><a href="/projects/#(project.key)">#(project.name)</a></li>
         #endfor
     </ul>
 #endexport

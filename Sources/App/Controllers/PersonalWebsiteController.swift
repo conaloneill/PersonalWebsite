@@ -55,7 +55,7 @@ final class PersonalWebsiteController {
         let context = MainView(title: "Welcome to my personal website!", body: projects.filter{$0.key == "website"}.first?.description)
         
         if let url = Environment.get("CANARY_URL") {
-            req.client.get(URI(string: url))
+            _ = req.client.get(URI(string: url))
         }
         return req.view.render("home", context)
     }
@@ -89,7 +89,7 @@ final class PersonalWebsiteController {
         let context = ProjectView(
             name: projects.first?.name,
             description: projects.first?.description,
-            photo: String(describing: projects.first),
+            photo: projects.first?.key,
             allProjects: projects
         )
         return req.view.render("project", context)
