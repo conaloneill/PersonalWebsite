@@ -43,7 +43,7 @@ CV
 
 			<section id="profile">
 				<h2>My History &amp; Profile</h2>
-				<p itemprop="description">I'm a 24 year old iOS developer from Dublin, Ireland.
+				<p itemprop="description">I'm a 25 year old software developer from Dublin, Ireland.
 			</section>
             <div></div>
 			<section id="skills" class="clearfix" itemscope itemtype="http://schema.org/ItemList">
@@ -66,6 +66,7 @@ CV
                         <li itemprop="itemListElement">Cocoa Touch</li>
                         <li itemprop="itemListElement">Vapor (Server-Side Swift)</li>
                         <li itemprop="itemListElement">Cartage</li>
+                        <li itemprop="itemListElement">Swift Package Manager</li>
                         <li itemprop="itemListElement">CoreData</li>
                     </ul>
                 </section>
@@ -74,7 +75,7 @@ CV
 					<h4 itemprop="about">Software</h4>
 					<ul>
 						<li itemprop="itemListElement">Xcode</li>
-						<li itemprop="itemListElement">Intellij</li>
+						<li itemprop="itemListElement">IntelliJ IDEA</li>
 						<li itemprop="itemListElement">Atom</li>
 					</ul>
 				</section>
