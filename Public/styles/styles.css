@@ -22,3 +22,16 @@ padding: 5px;
 #skills-right { display: block; float: left;}
 
 
+
+
+ul#menu li {
+  display:inline;
+}
+
+ul[title]::before {
+    content: attr(title);
+    /* then add some nice styling as needed, eg: */
+    display: block;
+    font-weight: 600;
+    padding: 4px;
+}

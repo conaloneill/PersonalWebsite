@@ -4,103 +4,142 @@
 #endexport
 
 #export("h1"):
-CV
 #endexport
 
 #export("body"):
-	<head>
-	  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	  <meta name="author" content="Conal O'Neill">
-	  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	  <meta name="HandheldFriendly" content="true">
-	  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-	  <link rel="stylesheet" type="text/css" href="/styles/styles.css">
-	  <link rel="stylesheet" type="text/css" href="/styles/responsive.css">
-	  <!--[if lt IE 9]>
-	    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-	  <![endif]-->
-	</head>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Conal O'Neill">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+            <meta name="HandheldFriendly" content="true">
+                <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+                    <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+                        <link rel="stylesheet" type="text/css" href="/styles/responsive.css">
+                            <!--[if lt IE 9]>
+                            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+                            <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+                            <![endif]-->
+                            </head>
 
-	<body>
-		<div id="w" itemscope itemtype="http://schema.org/Person">
-			<header class="clearfix">
-				<div id="info">
-					<h1><span itemprop="name">Conal O'Neill</span></h1>
-					<h4><span itemprop="jobTitle">iOS Developer</span></h3>
-					<p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-					  <span itemprop="addressLocality">Terenure</span>,
-					  <span itemprop="addressRegion">Dublin</span>,
-					  <span itemprop="addressCountry">Ireland</span>
-					</p>
+<body>
+    <div id="w" itemscope itemtype="http://schema.org/Person">
+        <header class="clearfix">
+            <div id="info">
+                <h1><span itemprop="name">Conal O'Neill</span></h1>
+                <h4><span itemprop="jobTitle">iOS Developer</span></h3>
+                    <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                    <span itemprop="addressLocality">Terenure</span>,
+                    <span itemprop="addressRegion">Dublin</span>,
+                    <span itemprop="addressCountry">Ireland</span>
+                    </p>
                     <p><a href="http://github.com/conaloneill" itemprop="url">My GitHub</a> &bull; <a href="mailto:conaloneillcs@gmail.com" itemprop="url">conaloneillcs@gmail.com</a></p>
-				</div>
-
-				<div id="photo">
-					<img src="images/conal.png" alt="Conal O'Neill resume photo avatar" itemprop="image" />
-				</div>
-			</header>
-
-			<section id="profile">
-				<h2>My History &amp; Profile</h2>
-				<p itemprop="description">I'm a 25 year old software developer from Dublin, Ireland.
-			</section>
-            <div></div>
-			<section id="skills" class="clearfix" itemscope itemtype="http://schema.org/ItemList">
-				<h2 itemprop="name">Skillset</h2>
-				<section id="skills-left">
-					<h4 itemprop="about">Languages</h4>
-					<ul>
-                        <li itemprop="itemListElement">Swift</li>
-						<li itemprop="itemListElement">Java</li>
-						<li itemprop="itemListElement">Git</li>
-                        <li itemprop="itemListElement">Python</li>
-                        <li itemprop="itemListElement">Ruby</li>
-                        <li itemprop="itemListElement">SQL</li>
-					</ul>
-				</section>
-                
-                <section id="skills-middle">
-                    <h4 itemprop="about">Frameworks</h4>
-                    <ul>
-                        <li itemprop="itemListElement">Cocoa Touch</li>
-                        <li itemprop="itemListElement">Vapor (Server-Side Swift)</li>
-                        <li itemprop="itemListElement">Cartage</li>
-                        <li itemprop="itemListElement">Swift Package Manager</li>
-                        <li itemprop="itemListElement">CoreData</li>
-                    </ul>
-                </section>
-
-				<section id="skills-right">
-					<h4 itemprop="about">Software</h4>
-					<ul>
-						<li itemprop="itemListElement">Xcode</li>
-						<li itemprop="itemListElement">IntelliJ IDEA</li>
-						<li itemprop="itemListElement">Atom</li>
-					</ul>
-				</section>
-			</section>
-
-			<section id="education">
-				<h2>Education</h2>
-				<p><span itemprop="alumniOf">Bsc (Hons) Computer Science, University College Dublin (UCD)</span> 2019.</p>
-			</section>
-
-			<section id="experience">
-				<h2>Work Experience</h2>
-				<p>Customer Service Advisor for Apple and PTSB</p>
-				<p>Sales Agent for Sky Ireland</p>
-			</section>
-
-            <section id="interests">
-                <h2>Interests &amp; Achievements</h2>
-                <p>Formula 1</p>
-                <p>Golf</p>
-                <p>PADI Open Water Diver</p>
+                    </div>
+            
+            <div id="photo">
+                <img src="images/conal.png" alt="Conal O'Neill resume photo avatar" itemprop="image" />
+            </div>
+        </header>
+        
+        <section id="profile">
+            <h2>My History &amp; Profile</h2>
+            <p itemprop="description">I'm a 25 year old software developer from Dublin, Ireland.
+        </section>
+        <div></div>
+        <section id="skills" class="clearfix" itemscope itemtype="http://schema.org/ItemList">
+            <h2 itemprop="name">Skillset</h2>
+            <section id="skills-left">
+                <h4 itemprop="about">Languages</h4>
+                <ul>
+                    <li itemprop="itemListElement">Swift</li>
+                    <li itemprop="itemListElement">Java</li>
+                    <li itemprop="itemListElement">Git</li>
+                    <li itemprop="itemListElement">SQL</li>
+                    <li itemprop="itemListElement">C/C++</li>
+                    <li itemprop="itemListElement">Python</li>
+                    <li itemprop="itemListElement">Ruby</li>
+                </ul>
             </section>
-
-		</div>
-	</body>
+            
+            <section id="skills-middle">
+                <h4 itemprop="about">Frameworks</h4>
+                <ul>
+                    <li itemprop="itemListElement">Cocoa Touch</li>
+                    <li itemprop="itemListElement">Vapor (Server-Side Swift)</li>
+                    <li itemprop="itemListElement">Cartage</li>
+                    <li itemprop="itemListElement">Swift Package Manager</li>
+                    <li itemprop="itemListElement">CoreData</li>
+                    <li itemprop="itemListElement">Swagger-UI</li>
+                    <li itemprop="itemListElement">Eureka</li>
+                </ul>
+            </section>
+            
+            <section id="skills-right">
+                <h4 itemprop="about">Apps/Tools</h4>
+                <ul>
+                    <li itemprop="itemListElement">Xcode</li>
+                    <li itemprop="itemListElement">IntelliJ IDEA</li>
+                    <li itemprop="itemListElement">DataGrip</li>
+                    <li itemprop="itemListElement">Atom</li>
+                    <li itemprop="itemListElement">Heroku</li>
+                    <li itemprop="itemListElement">AWS (EC2)</li>
+                </ul>
+            </section>
+        </section>
+        
+        <section id="education">
+            <h2>Education</h2>
+            <ul>
+                <li><span itemprop="alumniOf">2019: Bsc (Hons) Computer Science, University College Dublin (UCD)</span></li>
+                <ul title="Modules">
+                    <li itemprop="itemListElement">
+                        <ul id="menu">
+                            <li>Final Year Project,</li>
+                            <li>Distributed Systems,</li>
+                            <li>Mobile App Dev - Cocoa Touch,</li>
+                            <li>Ethical Computer Hacking,</li>
+                            <li>Data Mining,</li>
+                            <li>Software Engineering 1 2 and 3,</li>
+                            <li>Cloud Computing,</li>
+                            <li>Connectionist Computing,</li>
+                            <li>Database and Information Systems,</li>
+                            <li>Robotics Design Project</li>
+                        </ul>
+                    </li>
+                </ul>
+                <li><span itemprop="alumniOf">2013 - 2016: Electronic and Electrical Engineering, University College Dublin (UCD)</span></li>
+                <li><span itemprop="alumniOf">2013: Leaving Certificate 475 points</span></li>
+            </ul>
+        </section>
+        
+        <section id="experience">
+            <h2>Work Experience</h2>
+            <ul>
+                <li>2018 - Present: Customer Service Advisor PTSB</li>
+                <li>2016 - 2017: Sales Agent for Sky Ireland</li>
+                <li>2015 - 2016: Customer Service Advisor for Apple</li>
+            </ul>
+        </section>
+        
+        <section id="achievements">
+            <h2>Achievements</h2>
+            <ul>
+                <li>Elected Captain both 2017/18, 2018/19 and Race Officer 2016/17 on the UCD Snowsports Committee</li>
+                <li>Won the Siemens RoboRugby Engineering Competition in UCD in 2014</li>
+                <li>Selected for the Irish Schools Ski Team</li>
+            </ul>
+        </section>
+        
+        <section id="interests">
+            <h2>Interests</h2>
+            <ul>
+                <li>iOS App Development</li>
+                <li>Formula 1</li>
+                <li>Golf</li>
+                <li>PADI Open Water Diver</li>
+            </ul>
+        </section>
+    </div>
+</body>
 #endexport
 
 #export("formHeading"):

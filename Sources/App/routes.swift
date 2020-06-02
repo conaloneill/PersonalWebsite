@@ -51,4 +51,18 @@ public func routes(_ app: Application) throws {
     let bitcoinAppController = BitcoinAppController()
     app.get("bitcoinapp", "price", use: bitcoinAppController.bitcoinPrice)
     app.get("bitcoinapp" , "currencies", use: bitcoinAppController.bitcoinCurrencies)
+    
+    
+    
+    /// WebSocket
+    app.webSocket("echo") { req, ws in
+        print(ws)
+        
+        // Echoes received messages.
+        ws.onText { ws, text in
+            print("Received text: \(text)")
+            ws.send("Test text from Vapor Server")
+        }
+    }
+    
 }
