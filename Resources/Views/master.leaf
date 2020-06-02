@@ -9,12 +9,15 @@
                 <!-- Bootstrap core CSS -->
                 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
                     <style>
-                        body {
-                            padding-top: 5rem;
-                            padding-left: 5rem;
-                            padding-right: 5rem;
-                            padding-bottom: 5rem;
-                        }
+                        
+
+                    body {
+                        padding-top: 5rem;
+                        padding-left: 2rem;
+                        padding-right: 2rem;
+                        padding-bottom: 5rem;
+                    }
+                        
                     </style>
                     
                     <title>#import("title") – Personal Website</title>

@@ -9,14 +9,13 @@
 		text-align: center;
 	}
 	#w { padding: 20px 15px; }
-	p { padding: 0; }
+	p { padding: 0px; }
 }
 
 @media only screen and (max-width: 570px) {
 	ul li {
-		display: inline-block; 
-		padding-left: 15px; 
-		width: 140px; 
+		display: list-item; 
+		padding-left: 15px;
 		background-position: -5px 0px;
 		margin-right: 6px; 
 		line-height: 1.7em;
@@ -25,15 +24,9 @@
 }
 
 @media only screen and (max-width: 480px) {
-	ul li { width: 120px; }
 	#w { margin: 0 20px; }
 }
 
 @media only screen and (max-width: 320px) {
 	#w { margin: 0 10px; }
-}
-
-/** iPhone only **/
-@media screen and (max-device-width: 480px) {
-	ul li { width: 150px; }
 }

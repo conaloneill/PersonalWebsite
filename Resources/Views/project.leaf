@@ -10,7 +10,12 @@
 
     #export("body"):
         <p>#(description)</p>
-        <p><img src="/projects/images/#(photo).png" style="width: 350px;"/></p>
+        #if(photo == "fyp"):
+            <p><img src="/projects/images/#(photo).png" style="width: 500px;"/></p>
+        #else:
+            <p><img src="/projects/images/#(photo).png" style="width: 900px;"/></p>
+        #endif
+        
     #endexport
 
 #export("formHeading"):

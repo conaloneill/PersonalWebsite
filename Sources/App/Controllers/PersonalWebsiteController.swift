@@ -24,9 +24,9 @@ let projects = [
         description: "Game bot that plays a game of Monopoly. Built in Java."
     ),
     Project(
-        key: "website",
-        name: "Personal Wesbite",
-        description: "My personal website is built on Vapor 4, written in Swift 5.2 and hosted on Heroku."
+        key: "personalWebsite",
+        name: "Personal Website",
+        description: "My Personal Website is built on Vapor 4, written in Swift 5.2 and hosted on Heroku."
     ),
     Project(
         key: "botBoard",
@@ -41,7 +41,7 @@ let projects = [
     Project(
         key: "panopoly",
         name: "Panopoly",
-        description: "Variation on Monopoly using randomly generated board spaces and characters. Server component runs on AWS with a Desktop component used to display the board. Android app is used as the game controller. All writting in Java with some Kotlin in the Android app."
+        description: "Variation on Monopoly using randomly generated board spaces and characters. Server component runs on AWS with a Desktop component used to display the board. Android app is used as the game controller. Built in Java with some Kotlin used in the Android app."
     )
 ]
 
@@ -52,7 +52,7 @@ final class PersonalWebsiteController {
     
     func home(_ req: Request) throws -> EventLoopFuture<View> {
         
-        let context = MainView(title: "Welcome to my personal website!", body: projects.filter{$0.key == "website"}.first?.description)
+        let context = MainView(title: "Welcome to my Personal Website!", body: projects.filter{$0.key == "personalWebsite"}.first?.description)
         
         if let url = Environment.get("CANARY_URL") {
             _ = req.client.get(URI(string: url))

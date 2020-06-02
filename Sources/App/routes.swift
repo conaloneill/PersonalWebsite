@@ -10,6 +10,9 @@ import Leaf
 //MARK: Routes
 public func routes(_ app: Application) throws {
     
+    
+    // ACME Challenge for Let's Encrypt SSL cert for domain
+    
     ///AaKHkyiRUjmgx1__IzIxuU5QZM2BBg0_N5LzErAfjVo.byjwGXWbeF1CLL1lSUZLXNVeqg5NOjgxSAC01Feiry8
     ///And make it available on your web server at this URL:
     ///http://conaloneill.dev/.well-known/acme-challenge/AaKHkyiRUjmgx1__IzIxuU5QZM2BBg0_N5LzErAfjVo
@@ -25,10 +28,12 @@ public func routes(_ app: Application) throws {
         return ("HOetqLWctvNbnkfval4DiE0oqBqUlP8-HGnbkMkOQxg.byjwGXWbeF1CLL1lSUZLXNVeqg5NOjgxSAC01Feiry8")
     }
     
+    // Redirect to projects from project
     app.get("project") { req in
         req.eventLoop.future(req.redirect(to: "projects"))
     }
     
+    // Redirect to projects from project with a project key
     app.get("project", ":projectID") { req -> EventLoopFuture<Response> in
         guard let projectName = req.parameters.get("projectID") else {
             return req.eventLoop.future(req.redirect(to: "projects"))

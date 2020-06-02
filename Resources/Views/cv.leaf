@@ -26,9 +26,8 @@
         <header class="clearfix">
             <div id="info">
                 <h1><span itemprop="name">Conal O'Neill</span></h1>
-                <h4><span itemprop="jobTitle">iOS Developer</span></h3>
+                <h4><span itemprop="jobTitle">Software Developer</span></h3>
                     <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-                    <span itemprop="addressLocality">Terenure</span>,
                     <span itemprop="addressRegion">Dublin</span>,
                     <span itemprop="addressCountry">Ireland</span>
                     </p>
@@ -36,7 +35,7 @@
                     </div>
             
             <div id="photo">
-                <img src="images/conal.png" alt="Conal O'Neill resume photo avatar" itemprop="image" />
+                <img src="images/conal.png" alt="Conal O'Neill resume photo avatar" itemprop="image" style="width:300px;"/>
             </div>
         </header>
         
@@ -63,13 +62,13 @@
             <section id="skills-middle">
                 <h4 itemprop="about">Frameworks</h4>
                 <ul>
-                    <li itemprop="itemListElement">Cocoa Touch</li>
+                    <li itemprop="itemListElement">Cocoa Touch(iOS SDK)</li>
                     <li itemprop="itemListElement">Vapor (Server-Side Swift)</li>
-                    <li itemprop="itemListElement">Cartage</li>
                     <li itemprop="itemListElement">Swift Package Manager</li>
                     <li itemprop="itemListElement">CoreData</li>
                     <li itemprop="itemListElement">Swagger-UI</li>
                     <li itemprop="itemListElement">Eureka</li>
+                    <li itemprop="itemListElement">REST</li>
                 </ul>
             </section>
             
@@ -78,8 +77,9 @@
                 <ul>
                     <li itemprop="itemListElement">Xcode</li>
                     <li itemprop="itemListElement">IntelliJ IDEA</li>
+                    <li itemprop="itemListElement">GitHub</li>
                     <li itemprop="itemListElement">DataGrip</li>
-                    <li itemprop="itemListElement">Atom</li>
+                    <li itemprop="itemListElement">DBBrowser for SQLite</li>
                     <li itemprop="itemListElement">Heroku</li>
                     <li itemprop="itemListElement">AWS (EC2)</li>
                 </ul>
@@ -89,22 +89,20 @@
         <section id="education">
             <h2>Education</h2>
             <ul>
-                <li><span itemprop="alumniOf">2019: Bsc (Hons) Computer Science, University College Dublin (UCD)</span></li>
+                <li><span itemprop="alumniOf">2016 - 2019: Bsc (Hons) Computer Science, University College Dublin (UCD)</span></li>
                 <ul title="Modules">
-                    <li itemprop="itemListElement">
-                        <ul id="menu">
-                            <li>Final Year Project,</li>
-                            <li>Distributed Systems,</li>
-                            <li>Mobile App Dev - Cocoa Touch,</li>
-                            <li>Ethical Computer Hacking,</li>
-                            <li>Data Mining,</li>
-                            <li>Software Engineering 1 2 and 3,</li>
-                            <li>Cloud Computing,</li>
-                            <li>Connectionist Computing,</li>
-                            <li>Database and Information Systems,</li>
-                            <li>Robotics Design Project</li>
-                        </ul>
-                    </li>
+                    <ul>
+                        <li>Final Year Project</li>
+                        <li>Mobile App Dev - Cocoa Touch</li>
+                        <li>Distributed Systems</li>
+                        <li>Database and Information Systems</li>
+                        <li>Software Engineering 1 2 and 3</li>
+                        <li>Data Mining</li>
+                        <li>Cloud Computing</li>
+                        <li>Connectionist Computing</li>
+                        <li>Ethical Computer Hacking</li>
+                        <li>Robotics Design Project</li>
+                    </ul>
                 </ul>
                 <li><span itemprop="alumniOf">2013 - 2016: Electronic and Electrical Engineering, University College Dublin (UCD)</span></li>
                 <li><span itemprop="alumniOf">2013: Leaving Certificate 475 points</span></li>
@@ -123,8 +121,10 @@
         <section id="achievements">
             <h2>Achievements</h2>
             <ul>
+                <li>Top agent in Open24, Permanent TSB for 2019 based on KPIs</li>
                 <li>Elected Captain both 2017/18, 2018/19 and Race Officer 2016/17 on the UCD Snowsports Committee</li>
                 <li>Won the Siemens RoboRugby Engineering Competition in UCD in 2014</li>
+                <li>2012 Junior Captain of Blainroe Golf Club</li>
                 <li>Selected for the Irish Schools Ski Team</li>
             </ul>
         </section>
@@ -133,6 +133,7 @@
             <h2>Interests</h2>
             <ul>
                 <li>iOS App Development</li>
+                <li>Skiing</li>
                 <li>Formula 1</li>
                 <li>Golf</li>
                 <li>PADI Open Water Diver</li>
