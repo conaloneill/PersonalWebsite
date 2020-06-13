@@ -10,7 +10,7 @@
 
 #export("body"):
     <p>Check out my GitHub: <a href=https://www.github.com/conaloneill>conaloneill</a></p>
-        <p>Email me at: <a href=mailto:#get(body)>#(body)</a> or using the form below.</p>
+        <p>Email me at: <a href="mailto:#(body)?subject=Email from Personal Website">#(body)</a> or using the form below.</p>
 #endexport
 
 #export("formHeading"):
