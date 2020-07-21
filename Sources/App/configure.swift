@@ -1,4 +1,5 @@
 import Vapor
+import Leaf
 
 /// Called before your application initializes.
 ///
