@@ -67,14 +67,14 @@ final class PersonalWebsiteController {
     }
     
     func contact(_ req: Request) throws -> EventLoopFuture<View> {
-        let context = MainView(title: "Contact Me", body: "conaloneillcs@gmail.com")
+        let context = MainView(title: "Contact Me", body: "info@conaloneill.dev")
         return req.view.render("contact", context)
     }
     
     func submit(_ req: Request) throws -> EventLoopFuture<View> {
         
         let form = try req.content.decode(ContactForm.self)
-        let emailAddress = EmailAddress(email: "conaloneillcs@gmail.com", name: "CSEmail")
+        let emailAddress = EmailAddress(email: "info@conaloneill.dev", name: "CSEmail")
         let personalizations = Personalization(to: [emailAddress], subject: "Email from Personal Website")
         let content = [["type": "text/plain", "value": "Message: \(form.message!) \n\n from: \(form.name!)"]]
         

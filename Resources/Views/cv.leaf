@@ -31,7 +31,7 @@
                     <span itemprop="addressRegion">Dublin</span>,
                     <span itemprop="addressCountry">Ireland</span>
                     </p>
-                    <p><a href="http://github.com/conaloneill" itemprop="url">My GitHub</a> &bull; <a href="mailto:conaloneillcs@gmail.com" itemprop="url">conaloneillcs@gmail.com</a></p>
+                    <p><a href="http://github.com/conaloneill" itemprop="url">My GitHub</a> &bull; <a href="mailto:conaloneillcs@gmail.com" itemprop="url">info@conaloneill.dev</a></p>
                     </div>
             
             <div id="photo">
@@ -113,15 +113,17 @@
         <section id="experience">
             <h2>Work Experience</h2>
             <ul>
-                <li>2018 - Present: Customer Service Advisor PTSB</li>
-                <li>2016 - 2017: Sales Agent for Sky Ireland</li>
-                <li>2015 - 2016: Customer Service Advisor for Apple</li>
+                <li>2020 - Date: Data Analyst, Permanent TSB</li>
+                <li>2018 - 2020: Customer Service Advisor, Permanent TSB</li>
+                <li>2016 - 2017: Sales Agent, Sky Ireland</li>
+                <li>2015 - 2016: Customer Service Advisor, Apple</li>
             </ul>
         </section>
         
         <section id="achievements">
             <h2>Achievements</h2>
             <ul>
+                <li>Successfully delivered large bank wide database project in 2020 for Permanent TSB</li>
                 <li>Top agent in Open24, Permanent TSB for 2019 based on KPIs</li>
                 <li>Elected Captain both 2017/18, 2018/19 and Race Officer 2016/17 on the UCD Snowsports Committee</li>
                 <li>Won the Siemens RoboRugby Engineering Competition in UCD in 2014</li>

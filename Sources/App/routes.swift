@@ -44,6 +44,8 @@ public func routes(_ app: Application) throws {
     let personalWebsiteController = PersonalWebsiteController()
     app.get("", use: personalWebsiteController.home)
     app.get("cv", use: personalWebsiteController.cv)
+    
+    
     app.get("contact", use: personalWebsiteController.contact)
     app.post("submit", use: personalWebsiteController.submit)
     app.get("projects", use: personalWebsiteController.projectHome)
