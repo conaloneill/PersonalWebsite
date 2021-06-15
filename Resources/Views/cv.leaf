@@ -41,7 +41,7 @@
         
         <section id="profile">
             <h2>My History &amp; Profile</h2>
-            <p itemprop="description">I'm a 25 year old software developer from Dublin, Ireland.
+            <p itemprop="description">I'm a 26 year old software developer from Dublin, Ireland.
         </section>
         <div></div>
         <section id="skills" class="clearfix" itemscope itemtype="http://schema.org/ItemList">
@@ -69,6 +69,8 @@
                     <li itemprop="itemListElement">Swagger-UI</li>
                     <li itemprop="itemListElement">Eureka</li>
                     <li itemprop="itemListElement">REST</li>
+					<li itemprop="itemListElement">MS SQL Server</li>
+					<li itemprop="itemListElement">Teradata SQL</li>
                 </ul>
             </section>
             
@@ -79,7 +81,7 @@
                     <li itemprop="itemListElement">IntelliJ IDEA</li>
                     <li itemprop="itemListElement">GitHub</li>
                     <li itemprop="itemListElement">DataGrip</li>
-                    <li itemprop="itemListElement">DBBrowser for SQLite</li>
+                    <li itemprop="itemListElement">SQL Server Management Studio</li>
                     <li itemprop="itemListElement">Heroku</li>
                     <li itemprop="itemListElement">AWS (EC2)</li>
                 </ul>
